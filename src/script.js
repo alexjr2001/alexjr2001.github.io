@@ -24,9 +24,6 @@ $(document).ready(function(){
         $(".icon-cancel").removeClass("active");
         $(".secondNav").removeClass("active");
     })
-    $(".formButtonSend").click(function(){         //We destroy classes to hide the menu displayed
-        window.scrollTo(0, document.body.scrollHeight);
-    })
 });
 
 var typed = new Typed(".Special-description",{      //Making an animation where it seems that is automatically typing
