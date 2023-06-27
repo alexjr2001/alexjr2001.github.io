@@ -1,0 +1,733 @@
+/*VARIABLES*/
+:root{  
+    --primary: chartreuse;
+    --almostBlack: #0a0a0a;
+}
+
+/*GLOBAL*/
+html{
+    scroll-snap-type: y mandatory; /*Scroll Bar Set Up*/
+}
+
+body{
+    background-color: black;
+    font-family:'Montserrat',serif;
+}
+header{ 
+    position: fixed;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+header.stay{                     /*In case we scroll the header changes color*/
+    background: rgba(98, 255, 0, 0.6);
+}
+
+/*HEADER SECTION*/
+.subheader{
+    display: flex;    
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.subheader.stay{           /*Changing form in case we scroll*/
+    padding: 0.5rem 2rem;
+}
+.subheader.stay .name-header-special, .subheader.stay .Name{    /*Changing form in case we scroll*/ 
+    color: black;
+}
+.icon-tabler-menu-2.in-white{
+    stroke: black;
+}
+.icon-menu:hover{
+    background: linear-gradient(to right, var(--primary), white, purple);
+    border-radius: 20%;
+}
+
+/*Header - Name*/
+.Name{
+    margin-left: 2rem;
+    font-size: 3.2rem;
+    color: white;
+    margin:auto 0;
+
+}
+.NameResponsive{
+    display: None;
+}
+
+.name-header-special{
+    color:var(--primary);    
+    transition: all 0.2s ease;
+}
+
+/*Header - Navigation */
+.mainNav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 4rem;
+    background-color: black;
+    border-radius: 1rem;
+    margin:auto 0;
+}
+
+.mainNav div{
+    padding: .15rem .3rem;
+    border-radius: 50%;
+}
+
+.mainNav div:hover{
+    background: linear-gradient(to right, var(--primary), white, purple);
+    cursor: pointer;
+    .icon-tabler{
+        stroke:black;
+    }
+}
+
+.menu-btn, .secondNav, .icon-cancel{  /*Icons of menu*/
+    cursor:pointer;
+    display:none;   
+}
+
+/*HOME SECTION*/
+.Home{
+    display: grid;
+    grid-template-columns:  repeat(2,1fr);
+    background: url(../img/bg1.jpg) center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;  /*100% viewport height*/
+    background-size: cover;
+}
+
+/*Home - Personal Description*/
+.Home-description{
+    grid-column: 2/3;
+    color: white;
+    font-size: 3rem;    
+    margin: 12rem auto auto auto;
+    padding: 1rem;
+
+}
+
+.Home-name{         /*Name in the Description*/
+    font-size: 5.9rem;
+}
+
+.Home-description div span{   /*.Special description */
+    color: var(--primary);
+    font-size:4rem;
+}
+
+.profile-photo{
+    grid-column: 1/2;
+    margin: auto;
+    padding: 2rem;
+}
+
+.profile-photo img{
+    width: 25rem;
+    border-radius: 1rem;
+}
+
+
+/*SKILL SECTION*/
+
+.Skill-section{
+    /*Fit the background*/
+    background: url(../img/bg1.jpg) center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;  /*100% viewport height*/
+    background-size: cover;
+    /*Divide in two the screen*/
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;    
+}
+
+.skill-subsection{
+    margin: auto;
+}
+
+/*Skill - AboutMe*/
+.AboutMe{
+    color:white;
+    font-size: 5rem;
+    text-align: center;
+    /*Align with flex*/
+    display: flex;
+    flex-direction: column;
+    padding: 2.5srem;
+}
+
+.AboutMe-title{ 
+    padding: 1.5rem 0;
+}
+
+.AboutMe-photo img{
+    width: 15rem;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.AboutMe-text{  /*Text talking about me*/
+    line-height: 1.4;
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 0 2.5rem;
+}
+
+
+.CV{        /*Button for download my CV*/
+    background: none;
+    color: greenyellow;
+    padding: 1rem;
+    font-size: .8rem;
+    border-radius: 1rem;
+    border: solid greenyellow;
+    transition: all .5s ease;
+    margin: auto;
+}
+
+.CV:hover{
+    background: greenyellow;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.DownloadCV{    /*Link to make the download*/
+    text-decoration: none;
+    color:greenyellow;
+    margin: auto;
+}
+
+/*Skills part*/
+.skills-title{
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    padding: 1rem;
+}
+.skill-box{
+    background-color: none;
+    border-radius: 2rem;
+    border:solid white;
+    margin: auto 4rem;
+    /*box-shadow: 0 .25rem .5rem var(--primary),0 1.5rem 3rem orange;*/
+    
+}
+
+.skills-table{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns:repeat(4,2fr);
+    gap: 1.5rem;
+}
+
+.skills-item{
+    display: grid;
+    grid-template-rows: subgrid(2,1fr);
+    margin:auto auto 0 auto;
+    text-align: center;
+}
+.skills-item .skill-icon img{
+    width: 4rem;
+}
+/*Bar of level in that skill*/
+.bar{
+    /*background-color: grey;*/
+    display: block;
+    height: .5rem;
+    width: 6rem;
+    border: .1rem solid white;
+    border-radius: 1rem;
+    overflow: hidden;
+    /*box-shadow: 0 .2rem .2rem grey;*/
+    transition: all 0.4s ease;
+    margin: 1rem auto;
+}
+.bar:hover{
+    box-shadow: 0 .4rem .4rem grey;
+    cursor: pointer;
+}
+.bar span{  /*Fill of the bar*/
+    padding-top: .1rem;
+    height: .45rem;
+    float: left;
+    background: linear-gradient(100deg,yellow,var(--primary),green);
+    border-radius: .5rem;
+}
+
+/*LEVELS OF EACH LANGUAGE OR TOOL WITH ANIMATION*/
+/*C++*/
+.bar .Cpp{
+    width: 95%;
+    animation: animCpp 3s;
+}
+
+@keyframes animCpp{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 95%;
+    }
+}
+/*Python*/
+.bar .Py{
+    width: 92%;
+    animation: animPy 3s;
+}
+
+@keyframes animPy{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 92%;
+    }
+}
+/*HTML,CSS*/
+.bar .Web{
+    width: 85%;
+    animation: animWeb 3s;
+}
+
+@keyframes animWeb{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+/*SQL,SQLITE*/
+.bar .SQL{
+    width: 65%;
+    animation: animSQL 3s;
+}
+
+@keyframes animSQL{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 65%;
+    }
+}
+/*Javascript*/
+.bar .JS{
+    width: 50%;
+    animation: animJS 3s;
+}
+
+@keyframes animJS{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 50%;
+    }
+}
+/*Java*/
+.bar .Java{
+    width: 35%;
+    animation: animJava 3s;
+}
+
+@keyframes animJava{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 35%;
+    }
+}
+/*Latex*/
+.bar .Latex{
+    width: 65%;
+    animation: animLatex 3s;
+}
+
+@keyframes animLatex{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 65%;
+    }
+}
+/*Pandas and Numpy*/
+.bar .Pandas{
+    width: 40%;
+    animation: animPandas 3s;
+}
+
+@keyframes animPandas{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 40%;
+    }
+}
+/*GIT*/
+.bar .Git{
+    width: 70%;
+    animation: animGit 3s;
+}
+
+@keyframes animGit{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+/*OS used*/
+.bar .OS{
+    width: 80%;
+    animation: animOS 3s;
+}
+
+@keyframes animOS{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+/*OpenGL*/
+.bar .OpenGL{
+    width: 85%;
+    animation: animOpenGL 3s;
+}
+
+@keyframes animOpenGL{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+/*Jupyter*/
+.bar .Jupyter{
+    width: 60%;
+    animation: animJupyter 3s;
+}
+
+@keyframes animJupyter{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+
+
+/*Arrow icons in case you want to make an slide bar*/
+/*.arrow .icon{
+    background-color: black;
+    padding: 0.8rem;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    box-shadow: 0rem .1rem .1rem white, 0 .1rem .1rem white;
+
+}
+.arrow .icon-tabler-chevron-left{
+    left:-1.2rem;
+}
+.arrow .icon-tabler-chevron-right{
+    right:-1.2rem;
+}*/
+
+
+/*CONTACT ME SECTION*/
+.ContactMe{
+    background: url(../img/bg1.jpg) center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;  /*100% viewport height*/
+    background-size: cover;
+}
+
+.ContactMe-title{
+    padding: 5rem;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+}
+
+.ContactMe-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-evenly;
+    width: 100%;
+}
+/*APPS FOR CONTACTING ME*/
+.ContactMe-info{
+    color: white;
+    border: solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 1.2rem;
+    background-color: black;
+}
+
+/*LINKS FOR CONTACTING ME*/
+.ContactMe-info a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    padding: .5rem;
+}
+
+.ContactMe-info a:hover img{
+    font-size: 2rem;
+    height: 4.5rem;
+    width: 4.5rem;
+}
+
+.ContactMe-info a img{
+    width: 4rem;
+    height: 4rem;
+    padding: 0 .2rem;
+}
+
+
+/*FORM TO SEND ME AN EMAIL*/
+.ContactMe-form{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+    background-color: rgb(101, 99, 99);
+    border: solid white; 
+    padding: 1.5rem; 
+    font-size: 1.4rem;
+    color: white;
+    text-align: left;
+    border-radius: 2rem;
+    margin: .5rem 1rem;
+}
+
+.formBoxName-input,.formBoxEmail-input,.formTextArea-input{
+    margin: auto;
+    width:100%;
+}
+
+.formSend{
+
+    text-align: right;
+}
+
+.formButtonSend{ /*SEND ME A GMAIL BUTTON*/
+    background: none;
+    padding: .5rem;
+    color: greenyellow;
+    background-color: transparent;
+    cursor: pointer;
+    border: solid greenyellow;
+    font-size: 1rem;
+    border-radius: 1rem;
+    transition: all .5s ease;
+}
+
+.formButtonSend:hover{
+    color:black;
+    background-color: greenyellow;
+    font-size: 1.2rem;
+}
+
+.copyright{
+    color:white;
+    font-size: 1rem;
+    text-align: right;
+    bottom: 0;
+    margin: auto .5rem;
+}
+
+/*Scroll Bar Set Up*/
+.Home, .Skill-section, .ContactMe{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+/*Stylish of scrollbar*/
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px black;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    outline: 1px solid green;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 1000px){
+    html{
+        scroll-snap-type: none;
+    }
+    /*HEADER SECTION*/
+    .mainNav{
+        display: none;
+    }
+    .menu-btn{          /*Change menu for an icon*/
+        display:block;
+        z-index: 999;
+        margin:auto 0;
+    }
+    .icon-menu.hide{
+        display: none;
+    }
+    
+    .icon-cancel.active{
+        display: block;
+    }
+    .secondNav{         /*Display the new Navigation*/
+        display:block;
+        position:fixed;
+        height:100vh;
+        width: 100%;
+        right:-100%;
+        top:0;
+        background:black;
+        text-align: center;
+        padding-top: 2rem;
+        transition: all 0.2s ease ;
+    }
+    .secondNav.active{  /*Activate the menu from the right side*/
+        right:0;                    
+    }
+    .secondNav div{
+        display:block;
+    }
+    .secondNav div a{       /*Link to take you to the sections*/
+        display: inline-block;
+        font-size: 2rem;
+        margin: 1rem auto;
+        text-decoration: none;
+        color: white;
+    }
+    .icon-tabler-x:hover{   /*Icon for hiding the menu*/
+        stroke: var(--primary);
+    }
+    .secondNav div a:hover{
+        color: var(--primary);
+    }
+
+    /*HOME RESPONSIVE*/
+    .Home{
+        display: flex;
+        flex-direction: column-reverse; /*Changing vertically the objects*/
+    }
+    .Home-description{
+        text-align: center;
+    }
+    .Home-name{
+        font-size:4rem;
+    }
+
+    .profile-photo img{
+        width: 15rem;
+        border-radius: 4rem;
+
+    }
+    .Skill-section{
+        display: flex;   /*Changing vertically the objects*/
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+    .AboutMe-title{
+        margin-top: 2.2rem;
+    }
+    .skills-table{
+        display: grid;
+        grid-template-columns: repeat(3,2fr);  /*Change the form of the skills and tools table*/
+
+    }
+
+    .ContactMe-content  {
+        display: flex;     /*Changing vertically the objects*/
+        flex-direction: column;
+        justify-content: space-between;
+        gap:4rem;
+    }
+}
+
+@media(max-width: 640px){
+    .Fullname{
+        display: none;
+    }
+    
+    .NameResponsive{        /*Change the name for my abbreviation or logo Alexander Junior = AJR*/
+        display: block;
+        color:var(--primary);
+        font-size: 3.7rem;
+    }
+    .subheader.stay .NameResponsive{      /*Change the color of the whole name when we scroll-down*/
+        color:black;
+    }
+    
+    .Home-description{      /*Making smaller the font-size*/
+        font-size: 2.5rem;
+    }
+    .Home-name{               /*Making smaller the font-size*/
+        font-size: 3rem;
+    }
+    
+    .Home-description div span{   /*Typing description */
+        font-size:3.2rem;
+    }
+    .profile-photo{
+        margin-top: 0;
+    }
+    .ContactMe-title{
+        font-size: 4rem;
+    }
+    .ContactMe-info a{
+        font-size: 1.2rem;
+    }
+    .ContactMe-info a img{
+        width: 2.9rem;
+        height: 2.9rem;
+        padding: 0 .1rem;
+    }
+}
+@media(max-width: 410px){
+    .skills-title{
+        font-size: 2rem;
+    }
+    .skills-table{
+        display: grid;
+        grid-template-columns: repeat(1,2fr);  /*Change the form of the skills and tools table*/
+    }
+    .ContactMe-title{
+        font-size: 2.9rem;
+    }
+    .ContactMe-info{
+        padding:0;
+    }
+}
+
