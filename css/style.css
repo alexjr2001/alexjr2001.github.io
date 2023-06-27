@@ -704,4 +704,12 @@ body::-webkit-scrollbar-thumb {
     .ContactMe-title{
         font-size: 4rem;
     }
+    .ContactMe-info a{
+        font-size: 1.2rem;
+    }
+    .ContactMe-info a img{
+        width: 2.9rem;
+        height: 2.9rem;
+        padding: 0 .1rem;
+    }
 }
