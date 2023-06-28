@@ -716,6 +716,15 @@ body::-webkit-scrollbar-thumb {
     }
 }
 @media(max-width: 410px){
+    .Home-description{      /*Making smaller the font-size*/
+        font-size: 2rem;
+    }
+    .Home-name{               /*Making smaller the font-size*/
+        font-size: 2.5rem;
+    }
+    .Home-description div span{   /*.Special description */
+        font-size: 2.2rem;
+    }
     .skills-title{
         font-size: 2rem;
     }
